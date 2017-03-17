@@ -1,0 +1,93 @@
+
+@import "css3-mixins.scss";
+
+.a {
+    @include css3-prefix(transform, tranlateZ(0));
+}
+
+.b {
+    @include css3-prefix-options(transform, tranlateZ(0));
+    @include css3-prefix-options(background, url() center center no-repeat, webkit, moz);
+}
+
+.c{
+    @include background-gradient(white, #999);
+}
+.d {
+    @include background-horizontal(white, #999);
+}
+
+.e{
+    @include background-radial(white, 0%,  black, 100%);
+}
+
+.f{
+    @include box-size(border-box);
+}
+
+.g {
+    @include column-count(3);
+}
+
+.h{
+    @include column-gap(10);
+}
+
+.i {
+    @include columns(3, 10);
+}
+
+.j {
+    @include flip;
+}
+
+.k {
+    @include font-face("Segoe UI");
+}
+
+.l {
+    @include opacity(0);
+}
+
+.m {
+    @include outline-radius(10);
+}
+
+.n {
+    @include transform(translateZ(0));
+}
+
+.o {
+    @include transform-origin(center);
+}
+
+.p {
+    @include transform-style(transform-style);
+}
+
+.q {
+    @include transition(all 2s .5s);
+}
+
+.r {
+    @include keyframes(height-grow){
+        from {
+            height: 0px;
+        }
+        to {
+            height: 100px;
+        }
+    }
+}
+
+.s {
+    @include animation(heigth-grow 2s .1s infinite);
+}
+
+.t {
+    @include backface-visibility(hidden);
+}
+
+.u {
+    @include perspective(400);
+}
