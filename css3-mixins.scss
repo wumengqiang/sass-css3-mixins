@@ -51,6 +51,19 @@
       #{$property}: #{$value};
 }
 
+// set mutiple pixel ratio images. 1x and 2x
+// usage: @include background-image-set('hello')
+//        @include background-image-set(hello.png, hello@2x.png)
+//
+@mixin background-image-set($images...){
+    @if length($images) == 1 {
+        background: url($images + '@2x.png') center center no-repeat;
+        background-image: -webkit-image-set(url($images + '.png') 1x, url(images + '@2x.png') 2x);
+    } @else if length($images) == 2{
+        background: url(nth($images, 2)) center center no-repeat;
+        background-image: -webkit-image-set(url(nth($images, 1)) 1x, url(nth($images, 2)) 2x);
+    }
+}
 
 /// Background Gradient
 /// @param {Color} $startColor [#3C3C3C] - Start Color
